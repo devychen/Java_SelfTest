@@ -9,7 +9,8 @@
  * 'y' is not considered a vowel (just 'a', 'e', 'i', 'o', and 'u')
  * Assume that all input is lowercase
  * Assume that the input contains no punctuation.
-
+ * 
+ * I additionally added a terminator when user enters only a period.
 */
 
 import java.util.*;
@@ -26,28 +27,33 @@ public class PigLatin2 {
         String line = "";
         String word = "";
         String pigWord = "";
+        Boolean inputContinues = true;
 
         // Read each line
         while (keyboard.hasNextLine()) {
             line = keyboard.nextLine();
             lineScan = new Scanner(line);
 
-            // Process each word
-            while (lineScan.hasNext()) {
-                word = lineScan.next();
-                char firstChar = word.charAt(0);
+            if (line.equals("."))
+                inputContinues = false;
+            else
 
-                // Check vowels
-                if (firstChar == 'a' || firstChar == 'e' || firstChar == 'u' ||
-                        firstChar == 'e' || firstChar == 'o') {
-                    pigWord = word + "lay";
-                } else {
-                    pigWord = word.substring(1) + firstChar + "ay";
+                // Process each word
+                while (lineScan.hasNext()) {
+                    word = lineScan.next();
+                    char firstChar = word.charAt(0);
+
+                    // Check vowels
+                    if (firstChar == 'a' || firstChar == 'e' || firstChar == 'u' ||
+                            firstChar == 'e' || firstChar == 'o') {
+                        pigWord = word + "lay";
+                    } else {
+                        pigWord = word.substring(1) + firstChar + "ay";
+                    }
+
+                    System.out.print(pigWord + " ");
+
                 }
-
-                System.out.print(pigWord + " ");
-
-            }
             System.out.println();
 
         }
