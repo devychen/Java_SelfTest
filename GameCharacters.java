@@ -27,7 +27,7 @@ public class GameCharacters {
 
     int total = strength + intelligence + luck;
 
-    if(total < 16)
+    if (total < 16)
     {
         System.out.println(name + " [strength: " + strength + ", " + 
                             "intelligence: " + intelligence + ", " +
@@ -36,6 +36,19 @@ public class GameCharacters {
         System.out.println("You have given your character too many points! Default values have been assigned:");
         System.out.println(name + " [[strength: 5, intelligence: 5, luck: 5]]");
     }
+
+    /*
+     * or
+     * 
+     * if (total >= 16)
+     * {
+     *      System.out.println("You have given your character too many points! Default values have been assigned:");
+     *      strength = intelligence = luck = 5;
+     * }
+     * System.out.println(name + " [strength: " + strength + ", " + 
+                            "intelligence: " + intelligence + ", " +
+                            "luck: " + luck + "]");
+    */
 
     keyboard.close();
    } 
