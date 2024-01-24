@@ -1,7 +1,7 @@
 /**
  * SelfTest 06
  * TKRB
- * Create a class LexUnit (lexical unit) to contain information
+ * About: Create a class LexUnit (lexical unit) to contain information
  * about a word itself and its synonyms.
  */
 
@@ -29,8 +29,8 @@ public class LexUnit {
      * @param wordForm
      */
     public LexUnit(String wordForm){
-        this();// ???
-        setWordForm(wordForm); //???
+        this();
+        setWordForm(wordForm);
     }
 
     /**
@@ -78,7 +78,7 @@ public class LexUnit {
      */
     public void addSynonym(String aSynonym){
         if (numSynonyms == synonyms.length){
-            String[] tmp = new String[INITIAL_SIZE + numSynonyms]; // ???
+            String[] tmp = new String[INITIAL_SIZE + numSynonyms]; // (???)
             for (int i = 0; i < numSynonyms; i++){
                 tmp[i] = synonyms[i];
             }
@@ -98,7 +98,7 @@ public class LexUnit {
     public String toString(){
         String rval = wordForm + ":";
         for (int i = 0; i < numSynonyms; i++){
-            rval += " " + synonyms[i];          // !!!
+            rval += " " + synonyms[i];          // (!!!)
         }
         return rval;
     }
